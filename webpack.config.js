@@ -21,7 +21,9 @@ module.exports = {
 	resolve: {
 		root: __dirname,
 		alias: {
-			Navigation: 'app/components/Navigation.jsx', 
+			CountDown: 'app/components/CountDown.jsx',
+			Timer: 'app/components/Timer.jsx', 
+			Navigation: 'app/components/Navigation.jsx',
 			Main: 'app/components/Main.jsx',
 			applicationStyles: 'app/styles/app.scss'
 		},
