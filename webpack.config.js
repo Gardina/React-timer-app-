@@ -6,11 +6,11 @@ module.exports = {
 		'script!foundation-sites/dist/foundation.min.js',
 		'./app/app.jsx'],
 	externals: {
-		jquery: 'jQuery'
+		jQuery: 'jQuery'
 	},
 	plugins: [
 		new webpack.ProvidePlugin({
-			'$': 'jquery',
+			'$': 'jQuery',
 			'jQuery': 'jquery'
 		})
 	],
@@ -21,8 +21,9 @@ module.exports = {
 	resolve: {
 		root: __dirname,
 		alias: {
+			Clock: 'app/components/Clock.jsx',
 			CountDown: 'app/components/CountDown.jsx',
-			Timer: 'app/components/Timer.jsx', 
+			Timer: 'app/components/Timer.jsx',
 			Navigation: 'app/components/Navigation.jsx',
 			Main: 'app/components/Main.jsx',
 			applicationStyles: 'app/styles/app.scss'
