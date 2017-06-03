@@ -40,15 +40,15 @@ const CountdownForm = React.createClass({
           <div className="numeric-input-group">
             <div className="numeric-input">
               <label>Hours</label>
-              <NumericInput className="form-control" min={0} max={100} value={0} onChange={this.getInputHour}/>
+              <NumericInput className="form-control" min={0} max={60} value={0} onChange={this.getInputHour}/>
             </div>
             <div className="numeric-input">
               <label>Minutes</label>
-              <NumericInput className="form-control" min={0} max={100} value={0} onChange={this.getInputMin}/>
+              <NumericInput className="form-control" min={0} max={60} value={0} onChange={this.getInputMin}/>
             </div>
             <div className="numeric-input">
               <label>Seconds</label>
-              <NumericInput className="form-control" min={0} max={100} value={0} onChange={this.getInputSec}/>
+              <NumericInput className="form-control" min={0} max={60} value={0} onChange={this.getInputSec}/>
             </div>
           </div>
           <button className="button expanded">Start</button>
