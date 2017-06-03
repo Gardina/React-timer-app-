@@ -29,9 +29,13 @@ var Clock = React.createClass({
 	},
 
 	render: function (){
-		let {totalSeconds} = this.props;
+		let {totalSeconds, color} = this.props;
+		let colorClock = 'clock-blue';
+		if (color) {
+			colorClock = 'clock-red';
+		} 
 		return (
-      <div className="clock">
+      <div className={colorClock}>
 				<span className="clock-text">
 					{this.formatSeconds(totalSeconds)}
 				</span>

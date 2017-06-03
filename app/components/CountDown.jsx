@@ -17,9 +17,14 @@ const CountDown = React.createClass({
 			switch (this.state.countdownStatus) {
 				case 'started':
 					this.startTimer();
+					this.setState({
+						color:undefined
+					})
 					break;
 			  case 'stopped':
-					this.setState({count: 0});
+					this.setState({
+						count: 0
+					});
 				case 'paused':
 					clearInterval(this.timer)
 					this.timer = undefined;
@@ -41,7 +46,13 @@ const CountDown = React.createClass({
 			);
 
 			if (newCount === 0) {
-				this.setState({countdownStatus: 'stopped'})
+				this.setState({
+					countdownStatus: 'stopped'
+			})
+			}
+
+			if (newCount < 6) {
+				this.changeClockColor();
 			}
 		}, 1000);
 	},
@@ -59,6 +70,10 @@ const CountDown = React.createClass({
 		})
 	},
 
+	changeClockColor: function() {
+		this.setState({color: 'red'})
+	},
+
 	render: function() {
 		let {count, countdownStatus} = this.state;
 
@@ -73,7 +88,7 @@ const CountDown = React.createClass({
 		return (
       <div>
 				<h1 className="page-title">Countdown App</h1>
-        <Clock totalSeconds={count} />
+        <Clock totalSeconds={count} color={this.state.color}/>
 				{renderControlArea()}
 			</div>
 		);
